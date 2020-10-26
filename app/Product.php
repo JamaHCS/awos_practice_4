@@ -17,11 +17,11 @@ class Product extends Model
 
     public function typeProduct()
     {
-        return $this->belongsTo(TypeProduct::class);
+        return $this->belongsTo('App\TypeProduct');
     }
 
     public function offer()
     {
-        return $this->hasOne(Offers::class);
+        return $this->hasOne('App\Offers');
     }
 }

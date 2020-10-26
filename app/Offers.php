@@ -10,13 +10,14 @@ class Offers extends Model
     protected $fillable = [
         'price',
         'existence',
-        'vigence'
+        'vigence',
+        'product_id'
     ];
 
     protected $hidden = [];
 
     public function product()
     {
-        return $this->hasOne(Product::class);
+        return $this->belongsTo('App\Product');
     }
 }
