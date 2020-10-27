@@ -24,4 +24,6 @@ class Product extends Model
     {
         return $this->hasOne('App\Offers');
     }
+
+    protected $table = 'productsp4';
 }

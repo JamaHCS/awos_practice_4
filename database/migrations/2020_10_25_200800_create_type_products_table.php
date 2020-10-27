@@ -13,7 +13,7 @@ class CreateTypeProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_products', function (Blueprint $table) {
+        Schema::create('type_productsp4', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->text('description');

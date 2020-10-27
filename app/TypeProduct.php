@@ -17,4 +17,6 @@ class TypeProduct extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    protected $table = 'type_productsp4';
 }

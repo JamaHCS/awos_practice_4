@@ -20,4 +20,6 @@ class Offers extends Model
     {
         return $this->belongsTo('App\Product');
     }
+
+    protected $table = 'offersp4';
 }
