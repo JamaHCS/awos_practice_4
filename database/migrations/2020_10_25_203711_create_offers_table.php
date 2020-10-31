@@ -13,7 +13,7 @@ class CreateOffersTable extends Migration
      */
     public function up()
     {
-        Schema::create('offersp4', function (Blueprint $table) {
+        Schema::create('offers', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->float('price')->default(0);
@@ -33,6 +33,6 @@ class CreateOffersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('offers');
+        Schema::dropIfExists('offersp4');
     }
 }

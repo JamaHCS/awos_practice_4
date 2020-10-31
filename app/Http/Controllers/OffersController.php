@@ -69,7 +69,6 @@ class OffersController extends Controller
      * @param  \Illuminate\Request  $request
      * @param  \App\Offers
      * $offers = Offers::find($offers); $of
-    //  * dd($offers);fers
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $offers)
