@@ -13,7 +13,7 @@ class CreateOffersTable extends Migration
      */
     public function up()
     {
-        Schema::create('offers', function (Blueprint $table) {
+        Schema::create('offersp4', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->float('price')->default(0);
@@ -22,7 +22,7 @@ class CreateOffersTable extends Migration
             $table->timestamps();
 
             $table->bigInteger('product_id')->unsigned()->index();
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('productsp4');
         });
     }
 

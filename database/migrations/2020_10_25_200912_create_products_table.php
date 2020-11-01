@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
 
             $table->bigInteger('type_product_id')->unsigned()->index();
-            $table->foreign('type_product_id')->references('id')->on('type_products');
+            $table->foreign('type_product_id')->references('id')->on('type_productsp4');
         });
     }
 

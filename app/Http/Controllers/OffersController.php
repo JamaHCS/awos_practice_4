@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class OffersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $offers = Offers::all();
@@ -21,23 +16,12 @@ class OffersController extends Controller
         return view('index', compact('offers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $products = Product::all();
         return view('create', compact('products'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         // dd($request);
@@ -49,12 +33,6 @@ class OffersController extends Controller
         return redirect()->route('index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Offers  $offers
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $offers = Offers::find($id);
@@ -63,14 +41,6 @@ class OffersController extends Controller
         return view('edit', compact('offers', 'products'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Request  $request
-     * @param  \App\Offers
-     * $offers = Offers::find($offers); $of
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $offers)
     {
         if ($request->product_id == "Selecciona...") {
@@ -87,12 +57,6 @@ class OffersController extends Controller
         return redirect()->route('index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Offers  $offers
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($offers)
     {
         $offers = Offers::find($offers);
