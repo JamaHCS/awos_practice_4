@@ -13,6 +13,8 @@ class Product extends Model
         'type_product_id'
     ];
 
+    protected $hidden = ['created_at', 'updated_at'];
+
     public function typeProduct()
     {
         return $this->belongsTo('App\TypeProduct');

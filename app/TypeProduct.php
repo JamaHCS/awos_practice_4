@@ -11,12 +11,13 @@ class TypeProduct extends Model
         'description'
     ];
 
-    protected $hidden = [];
-
     public function products()
     {
         return $this->hasMany(Product::class);
     }
+
+    protected $hidden = ['created_at', 'updated_at'];
+
 
     protected $table = 'type_productsp4';
 }
