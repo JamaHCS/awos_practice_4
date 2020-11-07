@@ -82,4 +82,13 @@ class ApiController extends Controller
         $typeProduct = $product->typeProduct()->get();
         return response()->json($typeProduct);
     }
+
+    public function switchVigence($id)
+    {
+        // dd($request);
+        $offer = Offers::find($id);
+        $offer->update(['vigence' => !$offer->vigence]);
+
+        return response()->json($offer, 201);
+    }
 }

@@ -13,7 +13,7 @@ class Product extends Model
         'type_product_id'
     ];
 
-    protected $hidden = ['created_at', 'updated_at'];
+    protected $hidden = ['created_at', 'updated_at', 'type_product_id'];
 
     public function typeProduct()
     {
