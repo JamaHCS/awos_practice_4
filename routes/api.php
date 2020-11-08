@@ -9,4 +9,5 @@ Route::middleware('api')->get('/products/{id}', 'ApiController@product');
 
 Route::get('/vigence/{id}', 'ApiController@switchVigence')->middleware('api');
 
-Route::apiResource('/offers', 'ApiController');
+Route::apiResource('/offers', 'ApiController')->except('destroy');
+Route::get('/offers/destroy/{id}', 'ApiController@destroy');
