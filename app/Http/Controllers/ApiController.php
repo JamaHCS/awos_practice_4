@@ -14,7 +14,7 @@ class ApiController extends Controller
     public function __construct()
     {
         $this->middleware('consults');
-        $this->middleware('guest');
+        // $this->middleware('guest');
     }
 
     public function index()
@@ -28,7 +28,7 @@ class ApiController extends Controller
             $offer->product->type = TypeProduct::find($offer->product->type_product_id);
         }
 
-        $offers['token'] = Session::token();
+        // $offers['token'] = Session::token();
 
         return response()->json($offers);
     }
@@ -42,7 +42,7 @@ class ApiController extends Controller
         return response()->json($offer);
     }
 
-    public function store(OffersRequest $request)
+    public function store(Request $request)
     {
         $offer = Offers::create($request->all());
 
