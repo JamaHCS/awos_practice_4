@@ -6,6 +6,7 @@ use App\Offers;
 use App\Product;
 use App\TypeProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests\Offer as OffersRequest;
 
 class ApiController extends Controller
@@ -13,16 +14,21 @@ class ApiController extends Controller
     public function __construct()
     {
         $this->middleware('consults');
+        $this->middleware('guest');
     }
 
     public function index()
     {
         $offers = Offers::all();
 
+
+
         foreach ($offers as $offer) {
             $offer->product = $offer->product()->get()[0];
             $offer->product->type = TypeProduct::find($offer->product->type_product_id);
         }
+
+        $offers['token'] = Session::token();
 
         return response()->json($offers);
     }
