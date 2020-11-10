@@ -49,10 +49,19 @@ class ApiController extends Controller
         return response()->json($offer, 201);
     }
 
-    public function update(OffersRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $offer = Offers::find($id);
-        $offer->update($request->all());
+
+        $product_id = (isset($request->product_id)) ? $request->product_id : $offer->product_id;
+        $price = (isset($request->price)) ? $request->price : $offer->price;
+        $existence = (isset($request->existence)) ? $request->existence : $offer->existence;
+
+        $offer->update([
+            'product_id' => $product_id,
+            'price' => $price,
+            'existence' => $existence
+        ]);
 
         return response()->json($offer, 201);
     }
